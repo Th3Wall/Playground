@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    font-weight: $font-weight-base;
+  font-family: $font-regular;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
 }

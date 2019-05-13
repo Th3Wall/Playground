@@ -1,0 +1,15 @@
+$left  : "left";
+$center: "center";
+$right : "right";
+
+$directions: (
+  left  : $left,
+  center: $center,
+  right : $right
+);
+
+@each $dir, $direction in $directions {
+  .text-#{$dir} {
+    text-align: $dir;
+  }
+}

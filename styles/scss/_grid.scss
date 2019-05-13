@@ -1,108 +1,63 @@
-// $grid__bp-sm: 576;
-// $grid__bp-md: 768;
-// $grid__bp-lg: 992;
-// $grid__bp-xl: 1200;
-// $grid__cols: 12;
+$columns: 12;
+$gutter : 1.5em;
 
-// $map-grid-props: (
-//   "": 0,
-//   "-sm": $grid__bp-sm,
-//   "-md": $grid__bp-md,
-//   "-lg": $grid__bp-lg,
-//   "-xl": $grid__bp-xl
-// );
+$font-size-base  : 1em;
+$line-height-base: 1.5em;
 
-// @mixin create-mq($breakpoint, $min-or-max) {
-//   @if ($breakpoint == 0) {
-//     @content;
-//   } @else {
-//     @media screen and (#{$min-or-max}-width: $breakpoint *1px) {
-//       @content;
-//     }
-//   }
-// }
+$container-width: rem-calc(1400px);
 
-// @mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
-//   @include create-mq($breakpoint, "min") {
-//     &__col#{$modifier}-offset-0 {
-//       margin-left: 0;
-//     }
-//     @for $i from 1 through $grid-cols {
-//       &__col#{$modifier}-#{$i} {
-//         flex-basis: (100 / ($grid-cols / $i)) * 1%;
-//       }
-//       &__col#{$modifier}-offset-#{$i} {
-//         margin-left: (100 / ($grid-cols / $i)) * 1%;
-//       }
-//     }
-//   }
-// }
+$screen-xs-max: rem-calc(360px);
+$screen-sm-max: rem-calc(480px);
+$screen-md-max: rem-calc(720px);
+$screen-lg-max: rem-calc(1024px);
 
-// @each $modifier, $breakpoint in $map-grid-props {
-//   @if ($modifier == "") {
-//     $modifier: "-xs";
-//   }
-//   @include create-mq($breakpoint - 1, "max") {
-//     .hidden#{$modifier}-down {
-//       display: none !important;
-//     }
-//   }
-//   @include create-mq($breakpoint, "min") {
-//     .hidden#{$modifier}-up {
-//       display: none !important;
-//     }
-//   }
-// }
+$xs: 0;
+$sm: $screen-sm-max;
+$md: $screen-md-max;
+$lg: $screen-lg-max;
 
-// .container {
-//   max-width: $grid__bp-md * 1px;
-//   margin: 0 auto;
-//   &--fluid {
-//     margin: 0;
-//     max-width: 100%;
-//   }
-//   &__row {
-//     display: flex;
-//     flex-wrap: wrap;
-//     width: 100%;
-//   }
-//   @each $modifier, $breakpoint in $map-grid-props {
-//     @include create-col-classes($modifier, $grid__cols, $breakpoint);
-//   }
-// }
+$playground-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg
+);
 
 .container {
-  width: calc(100% - 10em);
-  max-width: 60em;
   margin: 0 auto;
-  // background: lightblue;
-  &--fluid {
-    margin: 0;
-    max-width: 100%;
-  }
+  max-width: $container-width;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
 }
 
-div[class^="col-"] {
-  background: rgb(211, 150, 17);
-  margin: 1rem 0;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-.row {
+.flex-row {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
 }
 
-$columns: 12;
+[class*="col"] {
+  min-height: rem-calc(1px);
+  flex: 1;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
 
-@for $i from 1 through $columns {
-  .col-#{$i} {
-    flex: 0 0 100% / $columns * $i;
+  //[DEMO ONLY]
+  .panel {
+    margin-bottom: $gutter;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: rem-calc(1px) solid rgba(0, 0, 0, 0.25);
+    text-align: center;
   }
-  .col-offset-#{$i} {
-    margin-left: 100% / $columns * $i;
+}
+
+@each $key, $breakpoint in $playground-breakpoints {
+  @media (min-width: $breakpoint) {
+    @for $i from 1 through $columns {
+      $percent: $i/$columns * 100%;
+      .col-#{$key}-#{$i} {
+        flex: 0 0 $percent;
+        max-width: $percent;
+      }
+    }
   }
 }
