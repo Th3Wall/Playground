@@ -2,6 +2,16 @@
     font-family: "Gotham-Book";
     src: url("../../assets/fonts/Gotham-Book.otf") format("opentype");
 }  
+
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("../../assets/fonts/Gotham-Medium.otf") format("opentype");
+}
+  
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("../../assets/fonts/Gotham-Bold.otf") format("opentype");
+}
   
 $font-regular:                "Gotham-Book",   sans-serif;
 $font-medium :                "Gotham-Medium", sans-serif;

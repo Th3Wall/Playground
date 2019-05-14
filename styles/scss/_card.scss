@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: rem-calc(56px);
+  background: white;
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: rem-calc(110px);
+    background-color: #000000;
+    span {
+      font-family: $font-medium;
+      font-size: rem-calc(16px);
+      letter-spacing: rem-calc(6px);
+      line-height: rem-calc(24px);
+      color: #ffffff;
+      font-weight: $font-weight-normal;
+      text-transform: uppercase;
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem-calc(26px) rem-calc(34px);
+    font-family: $font-regular;
+    font-size: rem-calc(16px);
+    line-height: rem-calc(24px);
+    letter-spacing: 0;
+    min-height: rem-calc(170px),
+    p {
+      margin: 0;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-regular;
+    font-size: rem-calc(14px);
+    letter-spacing: rem-calc(2px);
+    line-height: rem-calc(30px);
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #000;
+    width: 100%;
+    height: rem-calc(50px);
+  }
+  &--play {
+    .card__header {
+      background: url("../../assets/images/card-play-harder.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 130%;
+    }
+  }
+  &--simplicity {
+    .card__header {
+      background: url("../../assets/images/card-simplicity.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: 130%;
+    }
+  }
+  &--innovation {
+    .card__header {
+      background: url("../../assets/images/card-innovation.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

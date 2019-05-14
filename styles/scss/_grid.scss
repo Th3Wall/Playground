@@ -1,10 +1,10 @@
 $columns: 12;
-$gutter : 1.5em;
+$gutter: 1.5rem;
 
-$font-size-base  : 1em;
-$line-height-base: 1.5em;
+$font-size-base: 1rem;
+$line-height-base: 1.5rem;
 
-$container-width: rem-calc(1400px);
+$container-width: rem-calc(1200px);
 
 $screen-xs-max: rem-calc(360px);
 $screen-sm-max: rem-calc(480px);
@@ -23,6 +23,26 @@ $playground-breakpoints: (
   lg: $lg
 );
 
+@mixin breakpoint($point) {
+  @if $point==mobile {
+    @media (min-width: map-get($playground-breakpoints, xs)) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (min-width: map-get($playground-breakpoints, sm)) {
+      @content;
+    }
+  } @else if $point==tablet-landscape {
+    @media (min-width: map-get($playground-breakpoints, md)) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (min-width: map-get($playground-breakpoints, lg)) {
+      @content;
+    }
+  }
+}
+
 .container {
   margin: 0 auto;
   max-width: $container-width;
@@ -30,9 +50,11 @@ $playground-breakpoints: (
   padding-right: $gutter / 2;
 }
 
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
+.flex {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 [class*="col"] {
