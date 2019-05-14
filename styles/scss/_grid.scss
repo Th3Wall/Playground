@@ -48,6 +48,10 @@ $playground-breakpoints: (
   max-width: $container-width;
   padding-left: $gutter / 2;
   padding-right: $gutter / 2;
+  &--fluid {
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 .flex {

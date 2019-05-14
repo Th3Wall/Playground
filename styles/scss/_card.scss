@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: rem-calc(56px);
   background: white;
+  margin-bottom: rem-calc(56px);
+  @include breakpoint(tablet-landscape) {
+    margin-bottom: 0;
+  }
   &__header {
     display: flex;
     justify-content: center;
@@ -21,15 +24,19 @@
     }
   }
   &__body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: rem-calc(26px) rem-calc(34px);
+    padding: rem-calc(24px) rem-calc(32px);
     font-family: $font-regular;
     font-size: rem-calc(16px);
     line-height: rem-calc(24px);
     letter-spacing: 0;
-    min-height: rem-calc(170px),
+    text-align: center;
+    min-height: rem-calc(160px);
+    @include breakpoint(tablet-landscape){
+      min-height: rem-calc(288px);
+    }
+    @include breakpoint(desktop){
+      min-height: rem-calc(176px);
+    }
     p {
       margin: 0;
     }

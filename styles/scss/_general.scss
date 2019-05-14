@@ -6,4 +6,23 @@ body {
   font-family: $font-regular;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: block;
+  height: 100%;
+}
+
+.section {
+  &__cards {
+    padding: rem-calc(75px) 0;
+    background-color: $primary-grey;
+  }
+  &__banners {
+    .container--fluid{
+      min-height: rem-calc(600px);
+    }
+  }
 }

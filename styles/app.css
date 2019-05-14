@@ -1,3 +1,12 @@
+.bg-grey {
+  background-color: #ebebeb; }
+
+.bg-black {
+  background-color: #000000; }
+
+.bg-white {
+  background-color: #ffffff; }
+
 @font-face {
   font-family: "Gotham-Book";
   src: url("../../assets/fonts/Gotham-Book.otf") format("opentype"); }
@@ -10,6 +19,39 @@
   font-family: "Gotham-Bold";
   src: url("../../assets/fonts/Gotham-Bold.otf") format("opentype"); }
 
+.btn {
+  font-family: "Gotham-Book", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: 0.125rem;
+  padding: 1.125rem 1.25rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out; }
+  .btn.btn--transparent {
+    background: transparent;
+    color: #ffffff;
+    border: 0.0625rem solid #ffffff; }
+    .btn.btn--transparent:hover {
+      -webkit-box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(255, 255, 255, 0.3);
+              box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(255, 255, 255, 0.3); }
+  .btn.btn--default {
+    background-color: #ffffff;
+    color: #000000;
+    border: 0.0625rem solid #000000; }
+    .btn.btn--default:hover {
+      -webkit-box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3);
+              box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3); }
+  .btn:hover {
+    -webkit-box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3); }
+  .btn:focus {
+    outline: none; }
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
@@ -17,13 +59,29 @@
 body {
   font-family: "Gotham-Book", sans-serif;
   font-size: 1rem;
-  font-weight: 400; }
+  font-weight: 400;
+  margin: 0;
+  padding: 0; }
+
+section {
+  display: block;
+  height: 100%; }
+
+.section__cards {
+  padding: 4.6875rem 0;
+  background-color: #ebebeb; }
+
+.section__banners .container--fluid {
+  min-height: 37.5rem; }
 
 .container {
   margin: 0 auto;
   max-width: 75rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem; }
+  .container--fluid {
+    margin: 0;
+    max-width: 100%; }
 
 .flex__row {
   display: -webkit-box;
@@ -313,8 +371,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 3.5rem;
-  background: white; }
+  background: white;
+  margin-bottom: 3.5rem; }
+  @media (min-width: 45rem) {
+    .card {
+      margin-bottom: 0; } }
   .card__header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -336,22 +397,21 @@ body {
       font-weight: 400;
       text-transform: uppercase; }
   .card__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 1.625rem 2.125rem;
+    padding: 1.5rem 2rem;
     font-family: "Gotham-Book", sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: 0;
-    min-height: 10.625rem, p;
-      min-height-margin: 0; }
+    text-align: center;
+    min-height: 10rem; }
+    @media (min-width: 45rem) {
+      .card__body {
+        min-height: 18rem; } }
+    @media (min-width: 64rem) {
+      .card__body {
+        min-height: 11rem; } }
+    .card__body p {
+      margin: 0; }
   .card__footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -387,3 +447,77 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
+
+.img__half,
+.content__half {
+  height: 18.75rem; }
+  @media (min-width: 45rem) {
+    .img__half,
+    .content__half {
+      height: 37.5rem; } }
+  .img__half[data-attribute="we-are"],
+  .content__half[data-attribute="we-are"] {
+    background-image: url("../../assets/images/banner-we-are.jpg"); }
+  .img__half[data-attribute="we-do"],
+  .content__half[data-attribute="we-do"] {
+    background-image: url("../../assets/images/banner-we-do.jpg"); }
+  .img__half[data-attribute="careers"],
+  .content__half[data-attribute="careers"] {
+    background-image: url("../../assets/images/banner-careers.jpg"); }
+
+.img__half {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.content__half {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 5rem;
+  width: 40%;
+  z-index: 2;
+  position: absolute; }
+  .content__half h2 {
+    font-family: "Gotham-Bold", sans-serif;
+    font-size: 4.375rem;
+    line-height: 4.0625rem;
+    text-transform: lowercase;
+    margin: 0;
+    width: 7.5rem; }
+  .content__half p {
+    font-family: "Gotham-Book", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin: 2.375rem 0;
+    width: 14.0625rem; }
+
+.content--left {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse; }
+  .content--left .content__half {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    text-align: right;
+    background-color: #ffffff;
+    color: #000000;
+    left: 0; }
+    .content--left .content__half h2 {
+      margin-left: auto; }
+
+.content--right .content__half {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-color: #000000;
+  color: #ffffff;
+  right: 0; }
