@@ -1,84 +1,97 @@
 .img,
-.content{
-    &__half {
-        height: rem-calc(300px);
-        @include breakpoint(tablet-landscape){
-            height: rem-calc(600px);
-        } 
-        &[data-attribute="we-are"]{
-            background-image: url("../../assets/images/banner-we-are.jpg");
-        }
-        &[data-attribute="we-do"]{
-            background-image: url("../../assets/images/banner-we-do.jpg");
-        }
-        &[data-attribute="careers"]{
-            background-image: url("../../assets/images/banner-careers.jpg");
-        }
+.content {
+  &__half {
+    &[data-attribute="we-are"] {
+      background-image: url("../../assets/images/banner-we-are.jpg");
     }
+    &[data-attribute="we-do"] {
+      background-image: url("../../assets/images/banner-we-do.jpg");
+    }
+    &[data-attribute="careers"] {
+      background-image: url("../../assets/images/banner-careers.jpg");
+    }
+  }
 }
 
 .img {
-    &__half {
-        width: 100%;
-        z-index: 1;
-        position: relative;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+  &__half {
+    height: rem-calc(252px);
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include breakpoint(tablet-landscape) {
+      height: rem-calc(600px);
     }
+  }
 }
 
 .content {
-    &__half {
-        display: flex;
-        align-items: center;
-        padding: rem-calc(32px) rem-calc(80px);
-        width: 40%;
-        z-index: 2;
-        position: absolute;
-        h2 {
-            font-family: $font-bold;
-            font-size: rem-calc(70px);
-            line-height: rem-calc(65px);
-            text-transform: lowercase;
-            margin: 0;
-            width: rem-calc(120px);
-        }
+  &__half {
+    display: block;
+    padding: rem-calc(32px) rem-calc(48px);
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: rem-calc(396px);
+    @include breakpoint(tablet-landscape) {
+      display: flex;
+      align-items: center;
+      height: rem-calc(600px);
+      width: 43%;
+      position: absolute;
+    }
+    @include breakpoint(desktop) {
+      padding: rem-calc(32px) rem-calc(80px);
+    }
+    h2 {
+      font-family: $font-bold;
+      font-size: rem-calc(70px);
+      line-height: rem-calc(65px);
+      text-transform: lowercase;
+      margin: 0;
+      width: rem-calc(136px);
+    }
+    p {
+      font-family: $font-regular;
+      font-size: rem-calc(14px);
+      line-height: rem-calc(24px);
+      margin: rem-calc(38px) 0;
+      width: rem-calc(225px);
+    }
+  }
+}
+
+.content {
+  &--on-left {
+    flex-flow: column;
+    @include breakpoint(tablet-landscape) {
+      flex-flow: row-reverse;
+    }
+    .content {
+      &__half {
+        justify-content: flex-end;
+        text-align: right;
+        background-color: $white;
+        color: $black;
+        left: 0;
+        h2,
         p {
-            font-family: $font-regular;
-            font-size: rem-calc(14px);
-            line-height: rem-calc(24px);
-            margin: rem-calc(38px) 0;
-            width: rem-calc(225px);
+          margin-left: auto;
         }
+      }
     }
-}
-
-.content {
-    &--left {
-        flex-flow: row-reverse;
-        .content {
-            &__half {
-                justify-content: flex-end;
-                text-align: right;
-                background-color: $white;
-                color: $black;
-                left: 0;
-                h2 {
-                    margin-left: auto;
-                }
-            }
-        }
+  }
+  &--on-right {
+    .content {
+      &__half {
+        justify-content: flex-start;
+        background-color: $black;
+        color: $white;
+        right: 0;
+      }
     }
-    &--right {        
-        .content {
-            &__half {
-                justify-content: flex-start;
-                background-color: $black;
-                color: $white;
-                right: 0;
-            }
-        }
-        
-    }
+  }
 }

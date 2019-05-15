@@ -448,49 +448,58 @@ section {
     background-repeat: no-repeat;
     background-size: cover; }
 
-.img__half,
-.content__half {
-  height: 18.75rem; }
-  @media (min-width: 45rem) {
-    .img__half,
-    .content__half {
-      height: 37.5rem; } }
-  .img__half[data-attribute="we-are"],
-  .content__half[data-attribute="we-are"] {
-    background-image: url("../../assets/images/banner-we-are.jpg"); }
-  .img__half[data-attribute="we-do"],
-  .content__half[data-attribute="we-do"] {
-    background-image: url("../../assets/images/banner-we-do.jpg"); }
-  .img__half[data-attribute="careers"],
-  .content__half[data-attribute="careers"] {
-    background-image: url("../../assets/images/banner-careers.jpg"); }
+.img__half[data-attribute="we-are"],
+.content__half[data-attribute="we-are"] {
+  background-image: url("../../assets/images/banner-we-are.jpg"); }
+
+.img__half[data-attribute="we-do"],
+.content__half[data-attribute="we-do"] {
+  background-image: url("../../assets/images/banner-we-do.jpg"); }
+
+.img__half[data-attribute="careers"],
+.content__half[data-attribute="careers"] {
+  background-image: url("../../assets/images/banner-careers.jpg"); }
 
 .img__half {
+  height: 15.75rem;
   width: 100%;
   z-index: 1;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+  @media (min-width: 45rem) {
+    .img__half {
+      height: 37.5rem; } }
 
 .content__half {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2rem 5rem;
-  width: 40%;
+  display: block;
+  padding: 2rem 3rem;
+  position: relative;
   z-index: 2;
-  position: absolute; }
+  width: 100%;
+  height: 24.75rem; }
+  @media (min-width: 45rem) {
+    .content__half {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 37.5rem;
+      width: 43%;
+      position: absolute; } }
+  @media (min-width: 64rem) {
+    .content__half {
+      padding: 2rem 5rem; } }
   .content__half h2 {
     font-family: "Gotham-Bold", sans-serif;
     font-size: 4.375rem;
     line-height: 4.0625rem;
     text-transform: lowercase;
     margin: 0;
-    width: 7.5rem; }
+    width: 8.5rem; }
   .content__half p {
     font-family: "Gotham-Book", sans-serif;
     font-size: 0.875rem;
@@ -498,12 +507,18 @@ section {
     margin: 2.375rem 0;
     width: 14.0625rem; }
 
-.content--left {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-flow: row-reverse;
-          flex-flow: row-reverse; }
-  .content--left .content__half {
+.content--on-left {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column; }
+  @media (min-width: 45rem) {
+    .content--on-left {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: reverse;
+          -ms-flex-flow: row-reverse;
+              flex-flow: row-reverse; } }
+  .content--on-left .content__half {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -511,10 +526,11 @@ section {
     background-color: #ffffff;
     color: #000000;
     left: 0; }
-    .content--left .content__half h2 {
+    .content--on-left .content__half h2,
+    .content--on-left .content__half p {
       margin-left: auto; }
 
-.content--right .content__half {
+.content--on-right .content__half {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
