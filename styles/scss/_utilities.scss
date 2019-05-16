@@ -36,6 +36,11 @@
   overflow: hidden;
 }
 
+.error {
+  font-size: rem-calc(12px);
+  color: #ff6969;
+}
+
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

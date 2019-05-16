@@ -1,0 +1,76 @@
+.contacts {
+  &__info {
+    h2 {
+      font-family: $font-bold;
+      font-size: rem-calc(70px);
+      line-height: rem-calc(65px);
+      text-transform: lowercase;
+      margin: 0;
+    }
+    .headquarter {
+      margin: rem-calc(30px) 0 rem-calc(20px) 0;
+      @include breakpoint(desktop) {
+        margin-top: rem-calc(40px);
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0;
+        font-family: $font-regular;
+        font-size: rem-calc(14px);
+        line-height: rem-calc(24px);
+      }
+    }
+  }
+  &__form {
+    .form {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding-top: rem-calc(16px);
+      padding-left: 0;
+      padding-right: 0;
+      @include breakpoint(tablet-landscape) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      &__inputs {
+        width: auto;
+        padding: 0;
+        @include breakpoint(tablet-landscape) {
+          display: flex;
+          flex: 1 auto;
+        }
+      }
+      &__textarea {
+        width: 100%;
+      }
+      &__btn {
+        width: 100%;
+        margin-top: rem-calc(15px);
+        padding: rem-calc(14px) rem-calc(16px);
+        font-family: $font-medium;
+        font-size: rem-calc(14px);
+        letter-spacing: rem-calc(1px);
+        line-height: rem-calc(18px);
+        @include breakpoint(tablet-landscape) {
+          width: rem-calc(170px);
+        }
+      }
+    }
+
+    .inputs__content {
+      padding-bottom: rem-calc(16px);
+      &:first-child {
+        margin-right: 0;
+      }
+      @include breakpoint(tablet-landscape) {
+        width: 100%;
+        padding-bottom: rem-calc(24px);
+        &:first-child {
+          margin-right: rem-calc(24px);
+        }
+      }
+    }
+  }
+}

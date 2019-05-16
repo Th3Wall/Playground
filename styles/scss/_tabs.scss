@@ -3,7 +3,9 @@
     width: auto;
     @include breakpoint(tablet-landscape) {
       width: rem-calc(390px);
+      min-width: rem-calc(390px); //IE11 Fix
     }
+    padding: 0; //IE11 Fix for padding-inline-start/end
     padding-inline-start: 0 !important;
     padding-inline-end: 0 !important;
     list-style-type: none;

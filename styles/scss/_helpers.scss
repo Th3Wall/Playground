@@ -34,4 +34,22 @@ $directions: (
   &--auto {
     flex: 1 auto;
   }
+  &--j-start {
+    justify-content: flex-start;
+  }
+  &--j-center {
+    justify-content: center;
+  }
+  &--j-end {
+    justify-content: flex-end;
+  }
+  &--a-start {
+    align-items: flex-start;
+  }
+  &--a-center {
+    align-items: center;
+  }
+  &--a-end {
+    align-items: flex-end;
+  }
 }

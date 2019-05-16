@@ -84,6 +84,9 @@ $playground-breakpoints: (
         flex: 0 0 $percent;
         max-width: $percent;
       }
+      .col-#{$key}-offset-#{$i} {
+        margin-left: $percent;
+      }
     }
   }
 }

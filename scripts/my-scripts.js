@@ -48,14 +48,11 @@ function loadTabs() {
             $('#loader').addClass('active');
         },
         success: function (result) {
-            setTimeout(
-                function () {
-                    $('#loader').removeClass('active');
-                    $.each(result, function (key, value) {
-                        $(".tab__menu--item:first-child > a").text(value.title);
-                        $(".tab__container:first-child").text(value.content);
-                    });
-                }, 300);
+            $('#loader').removeClass('active');
+            $.each(result, function (key, value) {
+                $(".tab__menu--item:first-child > a").text(value.title);
+                $(".tab__container:first-child").text(value.content);
+            });
         },
         error: function (error) {
             $('#loader').removeClass('active');
@@ -71,14 +68,11 @@ function loadTabs() {
             $('#loader').addClass('active');
         },
         success: function (result) {
-            setTimeout(
-                function () {
-                    $('#loader').removeClass('active');
-                    $.each(result, function (key, value) {
-                        $(".tab__menu--item:nth-child(2) > a").text(value.title);
-                        $(".tab__container:nth-child(2)").text(value.content);
-                    });
-                }, 300);
+            $('#loader').removeClass('active');
+            $.each(result, function (key, value) {
+                $(".tab__menu--item:nth-child(2) > a").text(value.title);
+                $(".tab__container:nth-child(2)").text(value.content);
+            });
         },
         error: function (error) {
             $('#loader').removeClass('active');
@@ -94,14 +88,11 @@ function loadTabs() {
             $('#loader').addClass('active');
         },
         success: function (result) {
-            setTimeout(
-                function () {
-                    $('#loader').removeClass('active');
-                    $.each(result, function (key, value) {
-                        $(".tab__menu--item:last-child > a").text(value.title);
-                        $(".tab__container:last-child").text(value.content);
-                    });
-                }, 300);
+            $('#loader').removeClass('active');
+            $.each(result, function (key, value) {
+                $(".tab__menu--item:last-child > a").text(value.title);
+                $(".tab__container:last-child").text(value.content);
+            });
         },
         error: function (error) {
             $('#loader').removeClass('active');
@@ -109,7 +100,101 @@ function loadTabs() {
     });
 }
 
+function validateForm() {
+
+    $('#name_error_msg').hide();
+    $('#lastname_error_msg').hide();
+    $('#email_error_msg').hide();
+    $('#message_error_msg').hide();
+
+    var name_error = false;
+    var lastname_error = false;
+    var email_error = false;
+    var message_error = false;
+
+    $('#name').focusout(function () {
+        check_name();
+    });
+    $('#lastname').focusout(function () {
+        check_lastname();
+    });
+    $('#email').focusout(function () {
+        check_email();
+    });
+    $('#message').focusout(function () {
+        check_message();
+    });
+
+    function check_name() {
+        var pattern = /^[a-zA-Z]*$/;
+        var name = $('#name').val();
+        if (pattern.test(name) && name !== '') {
+            $('#name_error_msg').hide();
+        } else {
+            $('#name_error_msg').html("Should contain only characters");
+            $('#name_error_msg').show();
+            name_error = true;
+        }
+    }
+
+    function check_lastname() {
+        var pattern = /^[a-zA-Z]*$/;
+        var lastname = $('#lastname').val();
+        if (pattern.test(lastname) && lastname !== '') {
+            $('#lastname_error_msg').hide();
+        } else {
+            $('#lastname_error_msg').html("Should contain only characters");
+            $('#lastname_error_msg').show();
+            lastname_error = true;
+        }
+    }
+
+    function check_email() {
+        var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var email = $('#email').val();
+        if (pattern.test(email) && email !== '') {
+            $('#email_error_msg').hide();
+        } else {
+            $('#email_error_msg').html("Please insert a valid email");
+            $('#email_error_msg').show();
+            email_error = true;
+        }
+    }
+
+    function check_message(){
+        var message = $('#message').val();
+        if (message.length > 100){
+            $('#message_error_msg').hide();
+        } else {
+            $('#message_error_msg').html("You should insert a message at least of 100 characters");
+            $('#message_error_msg').show();
+            message_error = true;
+        }
+    }
+
+    $('#submitBtn').click(function (e) {
+        e.preventDefault();
+
+        name_error = false;
+        lastname_error = false;
+        email_error = false;
+        message_error = false;
+
+        check_name();
+        check_lastname();
+        check_email();
+        check_message();
+
+        if (name_error === false && lastname_error === false && email_error === false && message_error === false) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+}
+
 $(document).ready(function () {
     tabSectionToggle('#tab-section', '.tab__container', '#nav-tabs');
     loadTabs();
+    validateForm();
 });

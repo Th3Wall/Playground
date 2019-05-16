@@ -10,19 +10,67 @@ body {
   padding: 0;
 }
 
+input {
+  height: rem-calc(40px);
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  font-family: $font-regular;
+  font-size: rem-calc(14px);
+  background: rgba(0, 0, 0, 0);
+  color: $white;
+  padding: rem-calc(16px) rem-calc(14px);
+  border: rem-calc(1px) solid $white;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border: rem-calc(1px) solid $white;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  text-transform: lowercase;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-transform: lowercase;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-transform: lowercase;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  text-transform: lowercase;
+}
+
 section {
   display: block;
   height: 100%;
 }
 
 .section {
-  &__cards, &__tabs {
+  &__cards,
+  &__tabs {
     padding: rem-calc(75px) 0;
     background-color: $primary-grey;
   }
   &__banners {
-    .container--fluid{
+    .container--fluid {
       min-height: rem-calc(600px);
     }
+  }
+  &__contacts {
+    padding: rem-calc(75px) 0;
+    background-color: $black;
+    color: $white;
   }
 }
