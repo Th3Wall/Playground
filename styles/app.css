@@ -126,7 +126,8 @@ input {
   height: 2.5rem; }
 
 textarea {
-  resize: none; }
+  resize: none;
+  overflow: auto; }
 
 input,
 textarea {
@@ -570,6 +571,17 @@ section, footer {
     max-width: 100%; }
   .col-lg-offset-12 {
     margin-left: 100%; } }
+
+/* IE Fix for display: flex; insinde a flex-direction: column; */
+.flexfix {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important; }
+  @media (min-width: 45rem) {
+    .flexfix {
+      -webkit-box-flex: inherit !important;
+          -ms-flex: inherit !important;
+              flex: inherit !important; } }
 
 .text-left {
   text-align: left; }

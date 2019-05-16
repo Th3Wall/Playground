@@ -90,3 +90,11 @@ $playground-breakpoints: (
     }
   }
 }
+
+/* IE Fix for display: flex; insinde a flex-direction: column; */
+.flexfix {
+  flex: 1 1 auto !important;
+  @include breakpoint(tablet-landscape) {
+    flex: inherit !important;
+  }
+}

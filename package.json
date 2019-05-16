@@ -14,7 +14,8 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-sass": "^4.0.2",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "owl.carousel2": "^2.2.1"
   },
   "dependencies": {}
 }

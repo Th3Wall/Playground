@@ -20,6 +20,7 @@ input {
 
 textarea {
   resize: none;
+  overflow: auto;
 }
 
 input,
@@ -62,6 +63,9 @@ section, footer {
 }
 
 .section {
+  &__header {
+    
+  }
   &__cards,
   &__tabs {
     padding: rem-calc(75px) 0;
