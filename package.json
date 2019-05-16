@@ -9,6 +9,7 @@
   "author": "Davide Mandelli",
   "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",

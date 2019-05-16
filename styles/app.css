@@ -109,6 +109,9 @@ body {
   margin: 0;
   padding: 0; }
 
+a {
+  text-decoration: none; }
+
 input {
   height: 2.5rem; }
 
@@ -146,7 +149,7 @@ textarea:focus {
   /* IE 10+ */
   text-transform: lowercase; }
 
-section {
+section, footer {
   display: block;
   height: 100%; }
 
@@ -159,6 +162,12 @@ section {
 
 .section__contacts {
   padding: 4.6875rem 0;
+  background-color: #000000;
+  color: #ffffff; }
+
+.section__footer {
+  padding: 4.6875rem 0;
+  border-top: 0.0625rem solid #ffffff;
   background-color: #000000;
   color: #ffffff; }
 
@@ -573,6 +582,18 @@ section {
           -ms-flex-direction: column;
               flex-direction: column; } }
 
+.f--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.f--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
 .f--auto {
   -webkit-box-flex: 1;
       -ms-flex: 1 auto;
@@ -932,3 +953,46 @@ section {
       padding-bottom: 1.5rem; }
       .contacts__form .inputs__content:first-child {
         margin-right: 1.5rem; } }
+
+.footer__logo {
+  max-width: 9.375rem; }
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-top: 1.875rem; }
+  .footer__nav ul {
+    padding: 0;
+    list-style-type: none; }
+    @media (min-width: 45rem) {
+      .footer__nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+            -ms-flex: 1 auto;
+                flex: 1 auto;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; } }
+    .footer__nav ul li a {
+      font-family: "Gotham-Book", sans-serif;
+      font-size: 0.875rem;
+      letter-spacing: 0.0625rem;
+      color: #ffffff;
+      text-decoration: none; }
+
+.footer__socials {
+  margin-top: 2.1875rem; }
+  .footer__socials .fab {
+    margin: 0 0.4375rem;
+    color: #747474; }

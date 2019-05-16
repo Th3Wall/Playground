@@ -3,8 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Playground</title>
+    <link
+      href="/assets/fonts/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/app.css" />
   </head>
 
@@ -120,7 +124,7 @@
         <div class="flex__row">
           <div class="col-md-12">
             <div class="flex f--col-to-row">
-              <nav role="navigation" id="nav-tabs" class="nav__menu">
+              <nav id="nav-tabs" class="nav__menu">
                 <ul class="flex tab__menu">
                   <li class="tab__menu--item">
                     <a href="#tab1"></a>
@@ -166,38 +170,98 @@
             <form class="form flex f--col-to-row" name="contact_us">
               <div class="form__inputs">
                 <div class="inputs__content">
-                  <input type="text" class="form-control" id="name" placeholder="Name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Name"
+                  />
                   <span class="error" id="name_error_msg"></span>
                 </div>
                 <div class="inputs__content">
-                  <input type="text" class="form-control" id="lastname" placeholder="Last Name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastname"
+                    placeholder="Last Name"
+                  />
                   <span class="error" id="lastname_error_msg"></span>
                 </div>
               </div>
               <div class="inputs__content">
-                <input type="email" class="form-control" id="email" placeholder="Email"  />
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
                 <span class="error" id="email_error_msg"></span>
               </div>
               <div class="form__textarea">
-                <textarea name="textarea" id="message" rows="6" placeholder="Message"  /></textarea>
+                <textarea
+                  name="textarea"
+                  id="message"
+                  rows="6"
+                  placeholder="Message"
+                ></textarea>
                 <span class="error" id="message_error_msg"></span>
               </div>
-              <button type="submit" id="submitBtn" class="btn btn--default form__btn">
-                  Send
+              <button
+                type="submit"
+                id="submitBtn"
+                class="btn btn--default form__btn"
+              >
+                Send
               </button>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <footer class="flex__row">
-      <div class="col-lg-12">
-        <h1 class="text-center">Footer section</h1>
+    <footer class="section__footer">
+      <div class="container footer">
+        <div class="flex__row f--column">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <img
+              src="/assets/images/logo-playground-white.png"
+              class="footer__logo"
+              alt="Playground footer logo"
+            />
+          </div>
+        </div>
+        <div class="flex__row f--col-to-row">
+          <div class="col-md-offset-2 col-md-8">
+            <nav class="footer__nav">
+              <ul>
+                <li><a href="javascript:;">we are</a></li>
+                <li><a href="javascript:;">we do</a></li>
+                <li><a href="javascript:;">careers</a></li>
+                <li><a href="javascript:;">contact us</a></li>
+                <li><a href="javascript:;">arcade</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="flex__row f--col-to-row">
+          <div class="col-md-offset-2 col-md-8 text-center">
+            <div class="footer__socials">
+              <a href="https:/facebook.com/playground.digital.agency/" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a href="https://linkedin.com/company/playground-digital-agency/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://instagram.com/playground_agency" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <section class="flex__row">
       <div class="col-lg-12">
-        <h1 class="text-center">Cookie Policy section</h1>
+        <h2 class="text-center">Cookie Policy section</h2>
       </div>
     </section>
 

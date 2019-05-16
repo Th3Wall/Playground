@@ -31,6 +31,12 @@ $directions: (
       flex-direction: column;
     }
   }
+  &--row {
+    flex-direction: row;
+  }
+  &--column {
+    flex-direction: column;
+  }
   &--auto {
     flex: 1 auto;
   }
