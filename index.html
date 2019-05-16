@@ -8,9 +8,19 @@
   </head>
 
   <body>
-    <header class="flex__row">
-      <div class="col-lg-12"></div>
-    </header>
+    <div id="loader">
+      <div class="overlay"></div>
+      <img
+        class="loading-image"
+        src="./assets/images/loader.png"
+        alt="loading..."
+      />
+    </div>
+    <!-- <header class="flex__row">
+      <div class="col-lg-12">
+        <h1 class="text-center">Header section</h1>
+      </div>
+    </header> -->
     <section class="section__cards">
       <div class="container">
         <div class="flex__row">
@@ -82,9 +92,9 @@
             <article>
               <h2>We do.</h2>
               <p>Consectetur adipiscing elit. Nulla condimentum tortor sem.</p>
-                <button type="button" class="btn btn--default">
-                  The projects
-                </button>
+              <button type="button" class="btn btn--default">
+                The projects
+              </button>
             </article>
           </div>
         </section>
@@ -96,25 +106,63 @@
             <article>
               <h2>Careers.</h2>
               <p>Consectetur adipiscing elit. Nulla condimentum tortor sem.</p>
-                <button type="button" class="btn btn--transparent">
-                  The positions
-                </button>
+              <button type="button" class="btn btn--transparent">
+                The positions
+              </button>
             </article>
           </div>
         </section>
       </div>
     </section>
-    <section class="flex__row">
-      <div class="col-lg-12"></div>
+    <section class="section__tabs">
+      <div class="container">
+        <div class="flex__row">
+          <div class="col-md-12">
+            <div class="flex f--col-to-row">
+              <nav role="navigation" id="nav-tabs" class="nav__menu">
+                <ul class="flex tab__menu">
+                  <li class="tab__menu--item">
+                    <a href="#tab1"></a>
+                  </li>
+                  <li class="tab__menu--item">
+                    <a href="#tab2"></a>
+                  </li>
+                  <li class="tab__menu--item">
+                    <a href="#tab3"></a>
+                  </li>
+                </ul>
+              </nav>
+              <div
+                role="main"
+                id="tab-section"
+                class="tabs flex f--auto bg-white"
+              >
+                <div id="tab1" class="tab__container"></div>
+                <div id="tab2" class="tab__container"></div>
+                <div id="tab3" class="tab__container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="flex__row">
+      <div class="col-lg-12">
+          <h1 class="text-center">Contact section</h1>
+      </div>
     </section>
     <section class="flex__row">
-      <div class="col-lg-12"></div>
-    </section>
-    <section class="flex__row">
-      <div class="col-lg-12"></div>
+      <div class="col-lg-12">
+          <h1 class="text-center">Footer section</h1>
+      </div>
     </section>
     <footer class="flex__row">
-      <div class="col-lg-12"></div>
-    </footer>
+      <div class="col-lg-12">
+          <h1 class="text-center">Cookie Policy section</h1>
+      </div>
+    </footer> -->
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./scripts/my-scripts.js"></script>
   </body>
 </html>

@@ -12,7 +12,8 @@
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "jquery": "^3.4.1"
   },
   "dependencies": {}
 }

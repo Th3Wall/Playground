@@ -30,15 +30,14 @@
 
 .content {
   &__half {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: rem-calc(32px) rem-calc(48px);
     position: relative;
     z-index: 2;
     width: 100%;
     height: rem-calc(396px);
     @include breakpoint(tablet-landscape) {
-      display: flex;
-      align-items: center;
       height: rem-calc(600px);
       width: 43%;
       position: absolute;

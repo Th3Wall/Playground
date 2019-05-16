@@ -13,3 +13,25 @@ $directions: (
     text-align: $dir;
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.f {
+  &--col-to-row {
+    flex-direction: column;
+    @include breakpoint(tablet-landscape) {
+      flex-direction: row;
+    }
+  }
+  &--row-to-col {
+    flex-direction: row;
+    @include breakpoint(tablet-landscape) {
+      flex-direction: column;
+    }
+  }
+  &--auto {
+    flex: 1 auto;
+  }
+}

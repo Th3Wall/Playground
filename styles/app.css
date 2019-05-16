@@ -1,3 +1,45 @@
+#loader {
+  display: none; }
+  #loader .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ccc;
+    opacity: 0.7;
+    z-index: 999;
+    width: 100%;
+    height: 100%; }
+  #loader img {
+    position: fixed;
+    z-index: 1000;
+    overflow: visible;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-animation: spin 0.7s linear infinite;
+    animation: spin 0.7s linear infinite; }
+  #loader.active {
+    display: block; }
+
+.overflow-hidden {
+  overflow: hidden; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 .bg-grey {
   background-color: #ebebeb; }
 
@@ -67,7 +109,7 @@ section {
   display: block;
   height: 100%; }
 
-.section__cards {
+.section__cards, .section__tabs {
   padding: 4.6875rem 0;
   background-color: #ebebeb; }
 
@@ -360,6 +402,40 @@ section {
 .text-right {
   text-align: right; }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.f--col-to-row {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media (min-width: 45rem) {
+    .f--col-to-row {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.f--row-to-col {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  @media (min-width: 45rem) {
+    .f--row-to-col {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.f--auto {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto; }
+
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,7 +549,12 @@ section {
       height: 37.5rem; } }
 
 .content__half {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2rem 3rem;
   position: relative;
   z-index: 2;
@@ -481,12 +562,6 @@ section {
   height: 24.75rem; }
   @media (min-width: 45rem) {
     .content__half {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
       height: 37.5rem;
       width: 43%;
       position: absolute; } }
@@ -537,3 +612,73 @@ section {
   background-color: #000000;
   color: #ffffff;
   right: 0; }
+
+.tab__menu {
+  width: auto;
+  -webkit-padding-start: 0 !important;
+          padding-inline-start: 0 !important;
+  -webkit-padding-end: 0 !important;
+          padding-inline-end: 0 !important;
+  list-style-type: none;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto; }
+  @media (min-width: 45rem) {
+    .tab__menu {
+      width: 24.375rem; } }
+  .tab__menu--item {
+    background: #ccc;
+    margin-bottom: 1px; }
+    .tab__menu--item:last-child {
+      margin-bottom: 0; }
+    .tab__menu--item a {
+      display: block;
+      padding: 1.4375rem 3.625rem;
+      text-decoration: none;
+      font-family: "Gotham-Book", sans-serif;
+      font-size: 0.875rem;
+      letter-spacing: 0.0625rem;
+      line-height: 0.75rem;
+      color: #000000; }
+    .tab__menu--item.tab--active {
+      background: #000000; }
+      .tab__menu--item.tab--active a {
+        font-family: "Gotham-Bold", sans-serif;
+        color: #ffffff; }
+
+.tabs {
+  height: auto; }
+  .tabs .tab__container {
+    display: none;
+    background-color: #ffffff;
+    padding: 2.5rem 3.625rem;
+    font-family: "Gotham-Book", sans-serif;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    color: #000000; }
+    @media (min-width: 45rem) {
+      .tabs .tab__container {
+        padding: 2.5rem 4.375rem; } }
+    .tabs .tab__container.tab__container--active {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 auto;
+              flex: 1 auto; }
+
+.nav__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto; }

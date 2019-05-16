@@ -16,7 +16,7 @@ section {
 }
 
 .section {
-  &__cards {
+  &__cards, &__tabs {
     padding: rem-calc(75px) 0;
     background-color: $primary-grey;
   }
