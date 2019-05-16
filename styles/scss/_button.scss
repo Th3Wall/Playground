@@ -25,6 +25,17 @@
                 box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);
             }
         }
+        &--consent {
+            background-color: $black;
+            font-size: rem-calc(10px);
+            color: $white;
+            border: rem-calc(1px) solid $black;
+            padding: rem-calc(10px) rem-calc(42px);
+            margin: rem-calc(12px) rem-calc(30px);
+            &:hover {
+                box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);
+            }
+        }
     }
     &:hover {
         box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);

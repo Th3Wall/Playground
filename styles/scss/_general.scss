@@ -83,4 +83,16 @@ section, footer {
     background-color: $black;
     color: $white;
   }
+  &__cookie-consent {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    width: 100vw;
+    height: auto;
+    bottom: 0;
+    background-color: $white;
+    color: $black;
+    box-shadow: rem-calc(-2px) rem-calc(-1px) rem-calc(6px) rem-calc(1px) rgba(0,0,0,0.5);
+  }
 }

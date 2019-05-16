@@ -1,0 +1,11 @@
+.consent {
+    &__container {
+        p {
+            font-family: $font-regular;
+            font-size: rem-calc(10px);
+            line-height: rem-calc(12px);
+            letter-spacing: rem-calc(1px);
+        }
+        
+    }   
+}

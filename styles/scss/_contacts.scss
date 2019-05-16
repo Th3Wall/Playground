@@ -56,6 +56,9 @@
         @include breakpoint(tablet-landscape) {
           width: rem-calc(170px);
         }
+        &:hover {
+          box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(255, 255, 255, 0.3);
+        }
       }
     }
 
