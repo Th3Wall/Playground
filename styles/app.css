@@ -105,6 +105,11 @@
   .btn:hover {
     -webkit-box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3);
             box-shadow: 0.3125rem 0.4375rem 0.5625rem 0 rgba(0, 0, 0, 0.3); }
+    .btn:hover .fa-chevron-right {
+      -webkit-transform: translateX(0.2rem);
+              transform: translateX(0.2rem);
+      -webkit-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+      transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1); }
   .btn:focus {
     outline: none; }
 
@@ -123,11 +128,13 @@ a {
   text-decoration: none; }
 
 input {
-  height: 2.5rem; }
+  height: 2.5rem;
+  padding: 0 0.875rem !important; }
 
 textarea {
   resize: none;
-  overflow: auto; }
+  overflow: auto;
+  padding: 1rem 0.875rem; }
 
 input,
 textarea {
@@ -136,7 +143,6 @@ textarea {
   font-size: 0.875rem;
   background: rgba(0, 0, 0, 0);
   color: #ffffff;
-  padding: 1rem 0.875rem;
   border: 0.0625rem solid #ffffff;
   outline: none; }
 
@@ -887,6 +893,9 @@ section, footer {
       .tab__menu--item.tab--active a {
         font-family: "Gotham-Bold", sans-serif;
         color: #ffffff; }
+        .tab__menu--item.tab--active a i {
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg); }
 
 .tabs {
   height: auto; }

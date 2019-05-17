@@ -50,7 +50,7 @@ function loadTabs() {
         success: function (result) {
             $('#loader').removeClass('active');
             $.each(result, function (key, value) {
-                $(".tab__menu--item:first-child > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-down"></i>');
+                $(".tab__menu--item:first-child > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-up"></i>');
                 $(".tab__container:first-child").text(value.content);
             });
         },
@@ -70,7 +70,7 @@ function loadTabs() {
         success: function (result) {
             $('#loader').removeClass('active');
             $.each(result, function (key, value) {
-                $(".tab__menu--item:nth-child(2) > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-down"></i>');
+                $(".tab__menu--item:nth-child(2) > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-up"></i>');
                 $(".tab__container:nth-child(2)").text(value.content);
             });
         },
@@ -90,7 +90,7 @@ function loadTabs() {
         success: function (result) {
             $('#loader').removeClass('active');
             $.each(result, function (key, value) {
-                $(".tab__menu--item:last-child > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-down"></i>');
+                $(".tab__menu--item:last-child > a").text(value.title).append('&nbsp;<i class="fas fa-chevron-up"></i>');
                 $(".tab__container:last-child").text(value.content);
             });
         },

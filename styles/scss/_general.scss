@@ -16,11 +16,13 @@ a {
 
 input {
   height: rem-calc(40px);
+  padding: 0 rem-calc(14px) !important;
 }
 
 textarea {
   resize: none;
   overflow: auto;
+  padding: rem-calc(16px) rem-calc(14px);
 }
 
 input,
@@ -30,7 +32,6 @@ textarea {
   font-size: rem-calc(14px);
   background: rgba(0, 0, 0, 0);
   color: $white;
-  padding: rem-calc(16px) rem-calc(14px);
   border: rem-calc(1px) solid $white;
   outline: none;
 }

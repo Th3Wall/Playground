@@ -34,6 +34,9 @@
         a {
           font-family: $font-bold;
           color: $white;
+          i {
+            transform: rotate(180deg);
+          }
         }
       }
     }

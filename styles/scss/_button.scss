@@ -1,46 +1,53 @@
 .btn {
-    font-family: $font-regular;
-    font-size: rem-calc(14px);
-    line-height: rem-calc(18px);
-    letter-spacing: rem-calc(2px);
-    padding: rem-calc(18px) rem-calc(20px);
-    text-transform: uppercase;
-    border-radius: 0;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out;
-    &.btn {
-        &--transparent {
-            background: transparent;
-            color: $white;
-            border: rem-calc(1px) solid $white;
-            &:hover {
-                box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(255, 255, 255, 0.3);
-            }
-        }
-        &--default {
-            background-color: $white;
-            color: $black;
-            border: rem-calc(1px) solid $black;
-            &:hover {
-                box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);
-            }
-        }
-        &--consent {
-            background-color: $black;
-            font-size: rem-calc(10px);
-            color: $white;
-            border: rem-calc(1px) solid $black;
-            padding: rem-calc(10px) rem-calc(42px);
-            margin: rem-calc(12px) rem-calc(30px);
-            &:hover {
-                box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);
-            }
-        }
+  font-family: $font-regular;
+  font-size: rem-calc(14px);
+  line-height: rem-calc(18px);
+  letter-spacing: rem-calc(2px);
+  padding: rem-calc(18px) rem-calc(20px);
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+  &.btn {
+    &--transparent {
+      background: transparent;
+      color: $white;
+      border: rem-calc(1px) solid $white;
+      &:hover {
+        box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0
+          rgba(255, 255, 255, 0.3);
+      }
     }
-    &:hover {
-        box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0,0,0,0.3);
+    &--default {
+      background-color: $white;
+      color: $black;
+      border: rem-calc(1px) solid $black;
+      &:hover {
+        box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0
+          rgba(0, 0, 0, 0.3);
+      }
     }
-    &:focus {
-        outline: none;
+    &--consent {
+      background-color: $black;
+      font-size: rem-calc(10px);
+      color: $white;
+      border: rem-calc(1px) solid $black;
+      padding: rem-calc(10px) rem-calc(42px);
+      margin: rem-calc(12px) rem-calc(30px);
+      &:hover {
+        box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0
+          rgba(0, 0, 0, 0.3);
+      }
     }
+  }
+  &:hover {
+    box-shadow: rem-calc(5px) rem-calc(7px) rem-calc(9px) 0 rgba(0, 0, 0, 0.3);
+    .fa-chevron-right {
+      transform: translateX(0.2rem);
+      transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
 }
