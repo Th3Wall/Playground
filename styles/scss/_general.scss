@@ -58,14 +58,20 @@ textarea:focus {
   text-transform: lowercase;
 }
 
-section, footer {
+section,
+footer {
   display: block;
   height: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .section {
   &__header {
-    
+    background-color: $black;
+  }
+  &__carousel {
+    background-color: $black;
   }
   &__cards,
   &__tabs {
@@ -98,6 +104,7 @@ section, footer {
     bottom: 0;
     background-color: $white;
     color: $black;
-    box-shadow: rem-calc(-2px) rem-calc(-1px) rem-calc(6px) rem-calc(1px) rgba(0,0,0,0.5);
+    box-shadow: rem-calc(-2px) rem-calc(-1px) rem-calc(6px) rem-calc(1px)
+      rgba(0, 0, 0, 0.5);
   }
 }

@@ -9,6 +9,7 @@
       href="/assets/fonts/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/node_modules/animate.css/animate.min.css" />
     <link
       rel="stylesheet"
       href="/node_modules/owl.carousel2/dist/assets/owl.carousel.min.css"
@@ -25,18 +26,54 @@
         alt="loading..."
       />
     </div>
-    <header class="section__header">
+    <section class="section__header" id="header">
+      <nav
+        class="nav__menu header__nav flex f--col-to-row f--a-center animated fadeIn delay-1s"
+      >
+        <a href="#header" class="logos">
+          <img
+            src="/assets/images/logo-playground-white.png"
+            class="nav__menu--logo whitelogo show"
+            alt="Playground Nav White Logo"
+          />
+          <img
+            src="/assets/images/logo-playground-black.png"
+            class="nav__menu--logo blacklogo hide"
+            alt="Playground Nav Black Logo"
+          />
+        </a>
+
+        <ul class="flex f--col-to-row f--a-center flexfix">
+          <li><a href="#weare">we are</a></li>
+          <li><a href="#wedo">we do</a></li>
+          <li><a href="#careers">careers</a></li>
+          <li><a href="#contacts">contacts</a></li>
+          <li><a href="#arcade">arcade</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <header class="section__carousel animated fadeIn">
       <div class="container--fluid">
         <div class="slider-area">
           <div class="slider-active owl-carousel">
-            <img src="/assets/images/slide-hello.jpg" />
-            <img src="/assets/images/slide-play.jpg" />
-            <img src="/assets/images/slide-circle.jpg" />
+            <img
+              src="/assets/images/slide-hello.jpg"
+              alt="First slide of Playground carousel"
+            />
+            <img
+              src="/assets/images/slide-play.jpg"
+              alt="Second slide of Playground carousel"
+            />
+            <img
+              src="/assets/images/slide-circle.jpg"
+              alt="Third slide of Playground carousel"
+            />
           </div>
         </div>
       </div>
     </header>
-    <section class="section__cards">
+    <section class="section__cards animated fadeInUp delay-1s">
       <div class="container">
         <div class="flex__row">
           <div class="col-md-4 col-xs-12">
@@ -86,7 +123,7 @@
       </div>
     </section>
     <section class="section__banners">
-      <div class="container--fluid">
+      <div class="container--fluid animated fadeInRight delay-2s" id="weare">
         <section class="flex__row content--on-right">
           <div class="img__half" data-attribute="we-are"></div>
           <div class="content__half">
@@ -100,7 +137,7 @@
           </div>
         </section>
       </div>
-      <div class="container--fluid">
+      <div class="container--fluid animated fadeInLeft delay-2s" id="wedo">
         <section class="flex__row content--on-left">
           <div class="img__half" data-attribute="we-do"></div>
           <div class="content__half">
@@ -114,7 +151,7 @@
           </div>
         </section>
       </div>
-      <div class="container--fluid">
+      <div class="container--fluid animated fadeInRight delay-2s" id="careers">
         <section class="flex__row content--on-right">
           <div class="img__half" data-attribute="careers"></div>
           <div class="content__half">
@@ -129,7 +166,7 @@
         </section>
       </div>
     </section>
-    <section class="section__tabs">
+    <section class="section__tabs animated fadeInUp delay-2s">
       <div class="container">
         <div class="flex__row">
           <div class="col-md-12">
@@ -161,10 +198,12 @@
         </div>
       </div>
     </section>
-    <section class="section__contacts">
+    <section class="section__contacts animated fadeIn delay-2s" id="contacts">
       <div class="container">
         <div class="flex__row f--col-to-row">
-          <div class="col-sm-12 col-lg-offset-1 col-lg-3 flex contacts__info flexfix">
+          <div
+            class="col-sm-12 col-lg-offset-1 col-lg-3 flex contacts__info flexfix"
+          >
             <article>
               <h2>Contact us.</h2>
               <div class="headquarter">
@@ -176,7 +215,9 @@
               </div>
             </article>
           </div>
-          <div class="col-sm-12 col-lg-offset-1 col-lg-6 contacts__form flexfix">
+          <div
+            class="col-sm-12 col-lg-offset-1 col-lg-6 contacts__form flexfix"
+          >
             <form class="form flex f--col-to-row" name="contact_us">
               <div class="form__inputs">
                 <div class="inputs__content">
@@ -228,7 +269,7 @@
         </div>
       </div>
     </section>
-    <footer class="section__footer">
+    <footer class="section__footer animated fadeIn delay-2s" id="arcade">
       <div class="container footer">
         <div class="flex__row f--column">
           <div class="col-md-offset-2 col-md-8 text-center">
@@ -256,7 +297,7 @@
           <div class="col-md-offset-2 col-md-8 text-center flexfix">
             <div class="footer__socials">
               <a
-                href="https:/facebook.com/playground.digital.agency/"
+                href="https://facebook.com/playground.digital.agency/"
                 target="_blank"
               >
                 <i class="fab fa-facebook"></i>
@@ -275,7 +316,10 @@
         </div>
       </div>
     </footer>
-    <section class="section__cookie-consent" id="cookie_consent">
+    <section
+      class="section__cookie-consent animated fadeInUp delay-1s"
+      id="cookie_consent"
+    >
       <div class="container--fluid flex f--col-to-row f--j-center">
         <div class="flex__row">
           <div

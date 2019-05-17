@@ -1,0 +1,61 @@
+.slider-active {
+  .owl {
+    &-stage {
+      transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    &-stage-outer {
+      cursor: grab;
+    }
+    &-prev,
+    &-next {
+      height: rem-calc(40px);
+      width: rem-calc(40px);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent none repeat scroll 0 0;
+      color: #8e8b83;
+      font-size: rem-calc(20px);
+      line-height: rem-calc(40px);
+      text-align: center;
+    }
+    &-prev {
+      left: rem-calc(16px);
+      right: auto;
+      &:hover {
+        .fas {
+          transform: translateX(-0.2rem);
+          transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        }
+      }
+    }
+    &-next {
+      left: auto;
+      right: rem-calc(16px);
+      &:hover {
+        .fas {
+          transform: translateX(0.2rem);
+          transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+        }
+      }
+    }
+    &-dots {
+      position: absolute;
+      bottom: 2vh;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    &-dot {
+      display: inline-block;
+      height: rem-calc(10px);
+      width: rem-calc(10px);
+      margin: 0 rem-calc(8px);
+      background: #6d6c68 none repeat scroll 0 0;
+      border-radius: 50%;
+      &.active {
+        background: $white none repeat scroll 0 0;
+      }
+    }
+  }
+}

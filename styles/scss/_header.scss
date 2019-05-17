@@ -1,3 +1,54 @@
 .header {
-    
+  &__nav {
+    position: fixed;
+    display: flex;
+    flex: 1 auto;
+    width: 100%;
+    z-index: 999999;
+    padding: rem-calc(32px) rem-calc(128px);
+    transition: all 0.5s ease-in-out;
+    img {
+      max-width: rem-calc(190px);
+    }
+    ul {
+      display: none;
+      list-style-type: none;
+      margin-left: auto;
+      max-width: rem-calc(800px);
+      width: rem-calc(800px);
+      justify-content: space-between;
+      @include breakpoint(desktop) {
+        display: flex;
+      }
+      a {
+        color: $white;
+      }
+      &.show {
+        display: flex;
+      }
+    }
+    &--white {
+      background: white;
+      box-shadow: rem-calc(4px) rem-calc(2px) rem-calc(16px) rem-calc(4px)
+        rgba(0, 0, 0, 0.3);
+
+      ul {
+        a {
+          color: $black;
+        }
+      }
+    }
+    .navbar-toggle {
+      display: block;
+      position: absolute;
+      top: rem-calc(30px);
+      right: rem-calc(30px);
+      font-size: rem-calc(24px);
+      color: $white;
+      cursor: pointer;
+      @include breakpoint(desktop) {
+        display: none;
+      }
+    }
+  }
 }

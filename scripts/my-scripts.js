@@ -161,9 +161,9 @@ function validateForm() {
         }
     }
 
-    function check_message(){
+    function check_message() {
         var message = $('#message').val();
-        if (message.length > 100){
+        if (message.length > 100) {
             $('#message_error_msg').hide();
         } else {
             $('#message_error_msg').html("You should insert a message at least of 100 characters");
@@ -194,17 +194,12 @@ function validateForm() {
 }
 
 function cookieAcceptConsent() {
-    $('#cookieBtn').click(function(){
+    $('#cookieBtn').click(function () {
         $("#cookie_consent").fadeOut("slow");
     })
 }
 
-$(document).ready(function () {
-    tabSectionToggle('#tab-section', '.tab__container', '#nav-tabs');
-    loadTabs();
-    validateForm();
-    cookieAcceptConsent();
-
+function initOwlCarousel() {
     $('.slider-active').owlCarousel({
         loop: true,
         autoplay: true,
@@ -222,4 +217,43 @@ $(document).ready(function () {
             }
         }
     });
+}
+
+function checkNavTransparency() {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 150) {
+            $('.header__nav').addClass('header__nav--white');
+            $('.whitelogo').removeClass('show');
+            $('.whitelogo').addClass('hide');
+            $('.blacklogo').addClass('show');
+            $('.blacklogo').removeClass('hide');
+        } else {
+            $('.header__nav').removeClass('header__nav--white');
+            $('.blacklogo').removeClass('show');
+            $('.blacklogo').addClass('hide');
+            $('.whitelogo').addClass('show');
+            $('.whitelogo').removeClass('hide');
+        }
+    });
+}
+
+$(document).ready(function () {
+    checkNavTransparency();
+    initOwlCarousel();
+    tabSectionToggle('#tab-section', '.tab__container', '#nav-tabs');
+    loadTabs();
+    validateForm();
+    cookieAcceptConsent();
+
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top //no need of parseInt here
+        }, 900, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
+
 });
