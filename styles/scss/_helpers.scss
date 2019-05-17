@@ -1,0 +1,61 @@
+$left  : "left";
+$center: "center";
+$right : "right";
+
+$directions: (
+  left  : $left,
+  center: $center,
+  right : $right
+);
+
+@each $dir, $direction in $directions {
+  .text-#{$dir} {
+    text-align: $dir;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.f {
+  &--col-to-row {
+    flex-direction: column;
+    @include breakpoint(tablet-landscape) {
+      flex-direction: row;
+    }
+  }
+  &--row-to-col {
+    flex-direction: row;
+    @include breakpoint(tablet-landscape) {
+      flex-direction: column;
+    }
+  }
+  &--row {
+    flex-direction: row;
+  }
+  &--column {
+    flex-direction: column;
+  }
+  &--auto {
+    flex: 1 auto;
+  }
+  &--j-start {
+    justify-content: flex-start;
+  }
+  &--j-center {
+    justify-content: center;
+  }
+  &--j-end {
+    justify-content: flex-end;
+  }
+  &--a-start {
+    align-items: flex-start;
+  }
+  &--a-center {
+    align-items: center;
+  }
+  &--a-end {
+    align-items: flex-end;
+  }
+}

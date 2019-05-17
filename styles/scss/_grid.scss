@@ -1,72 +1,100 @@
-$grid__bp-sm: 576;
-$grid__bp-md: 768;
-$grid__bp-lg: 992;
-$grid__bp-xl: 1200;
-$grid__cols: 12;
+$columns: 12;
+$gutter: 1.5rem;
 
-$map-grid-props: (
-  "": 0,
-  "-sm": $grid__bp-sm,
-  "-md": $grid__bp-md,
-  "-lg": $grid__bp-lg,
-  "-xl": $grid__bp-xl
+$font-size-base: 1rem;
+$line-height-base: 1.5rem;
+
+$container-width: rem-calc(1200px);
+
+$screen-xs-max: rem-calc(360px);
+$screen-sm-max: rem-calc(480px);
+$screen-md-max: rem-calc(720px);
+$screen-lg-max: rem-calc(1024px);
+
+$xs: 0;
+$sm: $screen-sm-max;
+$md: $screen-md-max;
+$lg: $screen-lg-max;
+
+$playground-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg
 );
 
-@mixin create-mq($breakpoint, $min-or-max) {
-  @if ($breakpoint == 0) {
-    @content;
-  } @else {
-    @media screen and (#{$min-or-max}-width: $breakpoint *1px) {
+@mixin breakpoint($point) {
+  @if $point==mobile {
+    @media (min-width: map-get($playground-breakpoints, xs)) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (min-width: map-get($playground-breakpoints, sm)) {
+      @content;
+    }
+  } @else if $point==tablet-landscape {
+    @media (min-width: map-get($playground-breakpoints, md)) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (min-width: map-get($playground-breakpoints, lg)) {
       @content;
     }
   }
 }
 
-@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
-  @include create-mq($breakpoint, "min") {
-    &__col#{$modifier}-offset-0 {
-      margin-left: 0;
-    }
-    @for $i from 1 through $grid-cols {
-      &__col#{$modifier}-#{$i} {
-        flex-basis: (100 / ($grid-cols / $i)) * 1%;
-      }
-      &__col#{$modifier}-offset-#{$i} {
-        margin-left: (100 / ($grid-cols / $i)) * 1%;
-      }
-    }
-  }
-}
-
-@each $modifier, $breakpoint in $map-grid-props {
-  @if ($modifier == "") {
-    $modifier: "-xs";
-  }
-  @include create-mq($breakpoint - 1, "max") {
-    .hidden#{$modifier}-down {
-      display: none !important;
-    }
-  }
-  @include create-mq($breakpoint, "min") {
-    .hidden#{$modifier}-up {
-      display: none !important;
-    }
-  }
-}
-
 .container {
-  max-width: $grid__bp-md * 1px;
   margin: 0 auto;
+  max-width: $container-width;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
   &--fluid {
     margin: 0;
     max-width: 100%;
   }
+}
+
+.flex {
   &__row {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
   }
-  @each $modifier, $breakpoint in $map-grid-props {
-    @include create-col-classes($modifier, $grid__cols, $breakpoint);
+}
+
+[class*="col"] {
+  min-height: rem-calc(1px);
+  flex: 1;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+
+  //[DEMO ONLY]
+  .panel {
+    margin-bottom: $gutter;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: rem-calc(1px) solid rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+}
+
+@each $key, $breakpoint in $playground-breakpoints {
+  @media (min-width: $breakpoint) {
+    @for $i from 1 through $columns {
+      $percent: $i/$columns * 100%;
+      .col-#{$key}-#{$i} {
+        flex: 0 0 $percent;
+        max-width: $percent;
+      }
+      .col-#{$key}-offset-#{$i} {
+        margin-left: $percent;
+      }
+    }
+  }
+}
+
+/* IE Fix for display: flex; insinde a flex-direction: column; */
+.flexfix {
+  flex: 1 1 auto !important;
+  @include breakpoint(tablet-landscape) {
+    flex: inherit !important;
   }
 }
