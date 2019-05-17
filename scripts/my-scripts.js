@@ -245,7 +245,7 @@ $(document).ready(function () {
     validateForm();
     cookieAcceptConsent();
 
-    $('a[href^="#"]').on('click', function (e) {
+    $('#header a[href^="#"]').on('click', function (e) {
         e.preventDefault();
         var target = this.hash;
         $target = $(target);

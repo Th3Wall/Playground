@@ -1,4 +1,5 @@
 .slider-active {
+  position: relative;
   .owl {
     &-stage {
       transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -57,5 +58,33 @@
         background: $white none repeat scroll 0 0;
       }
     }
+  }
+}
+
+.slider-text{
+  display: none;
+  width: rem-calc(225px);
+  position: absolute;
+  left: 17%;
+  top: rem-calc(320px);
+  z-index: 99;
+  color: $white;
+  h2 {
+    font-family: $font-bold;
+    font-size: rem-calc(70px);
+    line-height: rem-calc(65px);
+    text-transform: lowercase;
+    margin: 0;
+    width: rem-calc(136px);
+  }
+  p {
+    font-family: $font-regular;
+    font-size: rem-calc(14px);
+    line-height: rem-calc(24px);
+    margin: rem-calc(38px) 0;
+    width: rem-calc(225px);
+  }
+  @include breakpoint(desktop){
+    display: block;
   }
 }
